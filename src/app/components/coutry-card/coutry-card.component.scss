@@ -1,0 +1,52 @@
+@use '../../../variables';
+
+.card {
+	width: 260px;
+	height: auto;
+	box-shadow: variables.$boxShadow;
+	position: relative;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.2s;
+
+	&.dark {
+		color: variables.$white;
+	}
+
+	* {
+		cursor: pointer;
+	}
+
+	&:hover {
+		transform: translateY(-10px);
+	}
+
+	img {
+		position: relative;
+		width: 100%;
+		border-radius: 5px 5px 0px 0px;
+	}
+
+	.info-content {
+		padding: 20px;
+		margin: auto 0px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	h4 {
+		margin-bottom: 1.2rem;
+		font-size: 1.2rem;
+		font-weight: 800;
+	}
+
+	h6 {
+		font-weight: 600;
+		font-size: 1rem;
+		small {
+			font-weight: 100;
+			font-size: 0.9em;
+		}
+	}
+}

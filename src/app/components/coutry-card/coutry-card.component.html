@@ -1,0 +1,18 @@
+<article class="card" *ngIf="country" appTheme>
+	<img [src]="country.flag" class="flag" />
+
+	<div class="info-content">
+		<h4>{{ country.name }}</h4>
+
+		<h6>
+			Population:
+			<small>{{ country.population | currency: undefined:"":"1.0" }}</small>
+		</h6>
+		<h6>
+			Region: <small>{{ country.region }}</small>
+		</h6>
+		<h6>
+			Capital: <small>{{ country.capital }}</small>
+		</h6>
+	</div>
+</article>

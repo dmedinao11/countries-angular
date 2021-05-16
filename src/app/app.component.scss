@@ -1,0 +1,8 @@
+@use '../variables';
+main {
+	background: variables.$veryLightGray;
+
+	&.dark {
+		background: variables.$veryDarkBlue;
+	}
+}
