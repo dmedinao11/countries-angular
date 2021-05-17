@@ -10,6 +10,8 @@ import { CountryDetailComponent } from './pages/country-detail/country-detail.co
 import { HttpClientModule } from '@angular/common/http';
 import { CoutryCardComponent } from './components/coutry-card/coutry-card.component';
 
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -19,7 +21,12 @@ import { CoutryCardComponent } from './components/coutry-card/coutry-card.compon
 		CountryDetailComponent,
 		CoutryCardComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		VirtualScrollerModule
+	],
 	providers: [],
 	bootstrap: [AppComponent]
 })

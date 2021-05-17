@@ -1,8 +1,12 @@
-<div class="wrapper" appTheme>
-	<section class="cards-container">
-		<app-coutry-card
-			*ngFor="let item of allCountries"
-			[country]="item"
-		></app-coutry-card>
-	</section>
+<div class="wrapper" #grid>
+	<virtual-scroller
+		#scroll
+		[items]="allCountries"
+		appTheme
+		[bufferAmount]="6"
+		[parentScroll]="grid"
+	>
+		<app-coutry-card *ngFor="let item of scroll.viewPortItems" [country]="item">
+		</app-coutry-card>
+	</virtual-scroller>
 </div>
