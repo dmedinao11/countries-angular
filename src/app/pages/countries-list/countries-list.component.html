@@ -1,9 +1,11 @@
 <div class="wrapper" #grid>
+	<app-filter-inputs></app-filter-inputs>
+
 	<virtual-scroller
 		#scroll
 		[items]="allCountries"
 		appTheme
-		[bufferAmount]="6"
+		[bufferAmount]="3"
 		[parentScroll]="grid"
 	>
 		<app-coutry-card *ngFor="let item of scroll.viewPortItems" [country]="item">

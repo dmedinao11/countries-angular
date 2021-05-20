@@ -1,13 +1,5 @@
 @use '../../../variables';
 
-.cards-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	justify-items: center;
-
-	width: 100%;
-}
-
 virtual-scroller {
 	width: 100%;
 	height: calc(100vh - 80px);
@@ -16,9 +8,8 @@ virtual-scroller {
 ::ng-deep {
 	.scrollable-content {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		grid-template-rows: repeat(auto-fit, 380px);
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 		justify-items: center;
-		gap: 1.5rem;
+		gap: 2rem;
 	}
 }

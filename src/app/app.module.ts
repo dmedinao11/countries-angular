@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoutryCardComponent } from './components/coutry-card/coutry-card.component';
 
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
+import { FilterInputsComponent } from './components/filter-inputs/filter-inputs.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +20,8 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 		ThemeDirective,
 		CountriesListComponent,
 		CountryDetailComponent,
-		CoutryCardComponent
+		CoutryCardComponent,
+		FilterInputsComponent
 	],
 	imports: [
 		BrowserModule,
