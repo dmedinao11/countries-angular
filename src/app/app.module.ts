@@ -14,6 +14,7 @@ import { CoutryCardComponent } from './components/coutry-card/coutry-card.compon
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 import { RegionSelectorComponent } from './components/region-selector/region-selector.component';
 import { FormsModule } from '@angular/forms';
+import { Error404Component } from './components/error404/error404.component';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
 		CountriesListComponent,
 		CountryDetailComponent,
 		CoutryCardComponent,
-		RegionSelectorComponent
+		RegionSelectorComponent,
+		Error404Component
 	],
 	imports: [
 		BrowserModule,

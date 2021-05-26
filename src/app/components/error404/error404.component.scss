@@ -1,0 +1,17 @@
+@use '../../../variables';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+	margin-top: 2rem;
+
+	&.dark h1 {
+		color: variables.$white;
+	}
+
+	img {
+		width: min-content;
+	}
+}

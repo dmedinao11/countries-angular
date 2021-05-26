@@ -4,6 +4,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class ThemeService {
+	//TODO: Guardar elección del usuario en el ls
 	hasDarkTheme: boolean;
 	themeChangeEmmiter: EventEmitter<null>;
 

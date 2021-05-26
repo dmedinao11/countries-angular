@@ -16,6 +16,7 @@ export class CountriesListComponent implements OnInit {
 	countriesToShow: ICountry[] = [];
 	regionSelected: RegionsType | undefined;
 	isLoaded = false;
+	hasData = true;
 	searchBar = '';
 
 	constructor(private countryService: CountryService) {}
@@ -39,11 +40,13 @@ export class CountriesListComponent implements OnInit {
 
 	handleSearchbarChange() {
 		this.isLoaded = false;
-		//TODO: Capturar error
-		//TODO: Capturar No data
 		this.countryService.getBySearch(this.searchBar).subscribe((resp) => {
-			this.countriesToShow = resp;
-			this.isLoaded = true;
+			if (resp.length === 0) this.hasData = false;
+			else {
+				this.countriesToShow = resp;
+				this.isLoaded = true;
+				this.hasData = true;
+			}
 		});
 	}
 }

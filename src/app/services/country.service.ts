@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ICountry, ICountryDetail } from '../models/country.interfaces';
 import { RegionsType } from '../data/regions';
 import { API_REQUEST_FIELDS, API_ROUTES } from '../../environments/api-routes';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CountryService {
@@ -22,9 +24,9 @@ export class CountryService {
 
 	getBySearch(query: string) {
 		if (!query || query === '') return this.getAll();
-		return this.httpClient.get<ICountry[]>(
-			`${API_ROUTES.byName}/${query}${API_REQUEST_FIELDS}`
-		);
+		return this.httpClient
+			.get<ICountry[]>(`${API_ROUTES.byName}/${query}${API_REQUEST_FIELDS}`)
+			.pipe(catchError(() => of([])));
 	}
 
 	getByCode(code = 'co') {
