@@ -1,23 +1,29 @@
-<div class="wrapper" #grid>
-	<div class="inputs-wrapper" appTheme>
+<div class="wrapper" appTheme>
+	<div class="inputs-wrapper">
 		<div class="field-container">
 			<i class="fas fa-search"></i>
-			<input type="text" id="search-bar" placeholder="Search for a country" />
+			<input
+				type="text"
+				id="search-bar"
+				placeholder="Search for a country"
+				[(ngModel)]="searchBar"
+				(ngModelChange)="handleSearchbarChange()"
+			/>
 		</div>
 		<app-region-selector
 			[(ngModel)]="regionSelected"
-			(ngModelChange)="handleChange()"
+			(ngModelChange)="handleRegionChange()"
 		></app-region-selector>
 	</div>
 
-	<virtual-scroller
-		#scroll
-		[items]="allCountries"
-		appTheme
-		[bufferAmount]="10"
-		[parentScroll]="grid"
-	>
-		<app-coutry-card *ngFor="let item of scroll.viewPortItems" [country]="item">
+	<div class="countries-grid" *ngIf="isLoaded; else loading">
+		<app-coutry-card *ngFor="let item of countriesToShow" [country]="item">
 		</app-coutry-card>
-	</virtual-scroller>
+	</div>
 </div>
+
+<ng-template #loading>
+	<div class="spinner-container">
+		<i class="fas fa-spinner fa-pulse"></i>
+	</div>
+</ng-template>

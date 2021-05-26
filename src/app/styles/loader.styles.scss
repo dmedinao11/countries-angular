@@ -1,0 +1,12 @@
+@use '../../variables.scss';
+
+.spinner-container {
+	display: flex;
+	justify-content: center;
+	font-size: 2rem;
+	margin-top: 2rem;
+
+	.dark & {
+		color: variables.$white;
+	}
+}

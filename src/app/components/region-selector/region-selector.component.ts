@@ -3,12 +3,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { RegionsType, Regions } from '../../data/regions';
 
-import { dropDownAnimation } from './regions-selector.animations';
+import {
+	dropDownAnimation,
+	iconAnimation
+} from './regions-selector.animations';
 @Component({
 	selector: 'app-region-selector',
 	templateUrl: './region-selector.component.html',
 	styleUrls: ['../../styles/inputs.styles.scss'],
-	animations: [dropDownAnimation],
+	animations: [dropDownAnimation, iconAnimation],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

@@ -1,6 +1,7 @@
 @use '../variables';
 main {
 	background: variables.$veryLightGray;
+	min-height: 100vh;
 
 	&.dark {
 		background: variables.$veryDarkBlue;

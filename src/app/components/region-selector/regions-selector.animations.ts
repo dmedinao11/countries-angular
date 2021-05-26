@@ -22,3 +22,20 @@ export const dropDownAnimation = trigger('expandHide', [
 	transition('expand => hide', [animate('0.3s')]),
 	transition('hide => expand', [animate('0.3s')])
 ]);
+
+export const iconAnimation = trigger('rotate', [
+	state(
+		'expand',
+		style({
+			transform: 'rotate(180deg)'
+		})
+	),
+	state(
+		'hide',
+		style({
+			transform: 'rotate(0deg)'
+		})
+	),
+	transition('expand => hide', [animate('0.3s')]),
+	transition('hide => expand', [animate('0.3s')])
+]);

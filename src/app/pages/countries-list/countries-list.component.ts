@@ -8,21 +8,42 @@ import { CountryService } from 'src/app/services/country.service';
 	templateUrl: './countries-list.component.html',
 	styleUrls: [
 		'./countries-list.component.scss',
-		'../../styles/inputs.styles.scss'
+		'../../styles/inputs.styles.scss',
+		'../../styles/loader.styles.scss'
 	]
 })
 export class CountriesListComponent implements OnInit {
-	allCountries: ICountry[] = [];
-
+	countriesToShow: ICountry[] = [];
 	regionSelected: RegionsType | undefined;
+	isLoaded = false;
+	searchBar = '';
 
 	constructor(private countryService: CountryService) {}
 
 	ngOnInit(): void {
-		this.countryService.getAll().subscribe((resp) => (this.allCountries = resp));
+		this.countryService.getAll().subscribe((resp) => {
+			this.countriesToShow = resp;
+			this.isLoaded = true;
+		});
 	}
 
-	handleChange() {
-		console.log(this.regionSelected);
+	handleRegionChange() {
+		this.isLoaded = false;
+		this.countryService
+			.getByRegion(this.regionSelected || 'All')
+			.subscribe((resp) => {
+				this.countriesToShow = resp;
+				this.isLoaded = true;
+			});
+	}
+
+	handleSearchbarChange() {
+		this.isLoaded = false;
+		//TODO: Capturar error
+		//TODO: Capturar No data
+		this.countryService.getBySearch(this.searchBar).subscribe((resp) => {
+			this.countriesToShow = resp;
+			this.isLoaded = true;
+		});
 	}
 }

@@ -4,7 +4,7 @@
 		(click)="handleToggleDrop()"
 	>
 		{{ value || "Filter by Region" }}
-		<i class="fas fa-chevron-down"></i>
+		<i class="fas fa-chevron-down" [@rotate]="isDropped ? 'expand' : 'hide'"></i>
 		<div class="dropdown" [@expandHide]="isDropped ? 'expand' : 'hide'">
 			<div
 				class="option"

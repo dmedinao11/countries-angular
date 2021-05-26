@@ -2,23 +2,8 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const API_MAIN_ROUTE = 'https://restcountries.eu/rest/v2';
-const API_REQUEST_FIELDS =
-	'?fields=name;population;region;capital;flag;alpha3Code';
-
 export const environment = {
-	production: false,
-	API_MAIN_ROUTE: 'https://restcountries.eu/rest/v2',
-	API_REQUEST_FIELDS: '?fields=name;population;region;capital;flag;alpha3Code',
-	API_REQUEST_FIELDS_DETAIL:
-		';languages;currencies;topLevelDomain;subregion;nativeName;borders',
-	API_ROUTES: {
-		all: `${API_MAIN_ROUTE}/all${API_REQUEST_FIELDS}`,
-		byRegion: `${API_MAIN_ROUTE}/region${API_REQUEST_FIELDS}`,
-		byName: `${API_MAIN_ROUTE}/name${API_REQUEST_FIELDS}`,
-		byCode: `${API_MAIN_ROUTE}/alpha`,
-		fields: '?fields=name;population;region;capital;flag;alpha3Code'
-	}
+	production: false
 };
 
 /*
