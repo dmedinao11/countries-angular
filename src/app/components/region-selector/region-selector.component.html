@@ -1,0 +1,18 @@
+<div appTheme>
+	<div
+		class="field-container field-container--select"
+		(click)="handleToggleDrop()"
+	>
+		{{ value || "Filter by Region" }}
+		<i class="fas fa-chevron-down"></i>
+		<div class="dropdown" [@expandHide]="isDropped ? 'expand' : 'hide'">
+			<div
+				class="option"
+				*ngFor="let region of REGIONS"
+				(click)="handleOptionClick(region)"
+			>
+				{{ region }}
+			</div>
+		</div>
+	</div>
+</div>

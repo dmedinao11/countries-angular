@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoutryCardComponent } from './components/coutry-card/coutry-card.component';
 
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
-import { FilterInputsComponent } from './components/filter-inputs/filter-inputs.component';
+import { RegionSelectorComponent } from './components/region-selector/region-selector.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -21,13 +23,15 @@ import { FilterInputsComponent } from './components/filter-inputs/filter-inputs.
 		CountriesListComponent,
 		CountryDetailComponent,
 		CoutryCardComponent,
-		FilterInputsComponent
+		RegionSelectorComponent
 	],
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
 		AppRoutingModule,
 		HttpClientModule,
-		VirtualScrollerModule
+		VirtualScrollerModule,
+		FormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

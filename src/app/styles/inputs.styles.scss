@@ -1,0 +1,95 @@
+@use '../../variables.scss';
+
+.inputs-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin: 2rem 0;
+}
+
+.field-container {
+	display: flex;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	gap: 1.5rem;
+	background: variables.$white;
+	box-shadow: variables.$boxShadow;
+	border-radius: 5px;
+	flex-grow: 0;
+	font-weight: 600;
+	position: relative;
+	width: fit-content;
+	font-weight: 100;
+	cursor: default;
+
+	.dark & {
+		background: variables.$darkBlue;
+		color: variables.$white;
+	}
+
+	&.field-container--select {
+		cursor: pointer;
+		width: 200px;
+	}
+
+	i {
+		color: variables.$darkGray;
+
+		&.fa-chevron-down {
+			cursor: pointer;
+			margin-left: auto;
+		}
+	}
+
+	input {
+		width: 23rem;
+		outline: none;
+		border: none;
+		font-size: 1rem;
+
+		.dark & {
+			background: variables.$darkBlue;
+			color: variables.$white;
+		}
+	}
+
+	.dropdown {
+		position: absolute;
+		background: variables.$white;
+		box-shadow: variables.$boxShadow;
+		width: 100%;
+		border-radius: 5px;
+		z-index: 10;
+		left: 0;
+		top: calc(100% + 5px);
+		display: block;
+		overflow-y: hidden;
+
+		.dark & {
+			background: variables.$darkBlue;
+			color: variables.$white;
+		}
+
+		.option {
+			padding: 10px 20px;
+			font-size: 1rem;
+			cursor: pointer;
+
+			.dark & {
+				background: variables.$darkBlue;
+			}
+
+			&:first-of-type {
+				border-radius: 5px 5px 0 0;
+			}
+
+			&:last-of-type {
+				border-radius: 0 0 5px 5px;
+			}
+
+			&:hover {
+				background: variables.$darkGray;
+				color: white;
+			}
+		}
+	}
+}

@@ -1,11 +1,20 @@
 <div class="wrapper" #grid>
-	<app-filter-inputs></app-filter-inputs>
+	<div class="inputs-wrapper" appTheme>
+		<div class="field-container">
+			<i class="fas fa-search"></i>
+			<input type="text" id="search-bar" placeholder="Search for a country" />
+		</div>
+		<app-region-selector
+			[(ngModel)]="regionSelected"
+			(ngModelChange)="handleChange()"
+		></app-region-selector>
+	</div>
 
 	<virtual-scroller
 		#scroll
 		[items]="allCountries"
 		appTheme
-		[bufferAmount]="3"
+		[bufferAmount]="10"
 		[parentScroll]="grid"
 	>
 		<app-coutry-card *ngFor="let item of scroll.viewPortItems" [country]="item">
