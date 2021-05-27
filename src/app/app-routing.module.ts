@@ -6,7 +6,7 @@ import { CountryDetailComponent } from './pages/country-detail/country-detail.co
 
 const routes: Routes = [
 	{ path: 'countries', component: CountriesListComponent },
-	{ path: 'country', component: CountryDetailComponent },
+	{ path: 'country/:code', component: CountryDetailComponent },
 	{ path: '', redirectTo: '/countries', pathMatch: 'full' },
 	{ path: '**', component: Error404Component }
 ];

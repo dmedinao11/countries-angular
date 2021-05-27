@@ -2,6 +2,8 @@
 main {
 	background: variables.$veryLightGray;
 	min-height: 100vh;
+	display: inline-block;
+	width: 100%;
 
 	&.dark {
 		background: variables.$veryDarkBlue;

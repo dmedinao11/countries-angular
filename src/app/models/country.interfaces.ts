@@ -20,7 +20,7 @@ export interface ICountryDetail {
 	subregion: string;
 	nativeName: string;
 	borders: string[];
-	bordersSt?: string[];
+	bordersDetail?: IBorder[];
 }
 
 export interface ICurrency {
@@ -34,6 +34,11 @@ export interface ILanguage {
 	iso639_2: string;
 	name: string;
 	nativeName: string;
+}
+
+export interface IBorder {
+	alpha3Code: string;
+	name: string;
 }
 
 export enum Region {

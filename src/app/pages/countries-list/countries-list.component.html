@@ -17,7 +17,11 @@
 	</div>
 
 	<div class="countries-grid" *ngIf="isLoaded; else loading">
-		<app-coutry-card *ngFor="let item of countriesToShow" [country]="item">
+		<app-coutry-card
+			*ngFor="let item of countriesToShow"
+			[country]="item"
+			[routerLink]="['/country', item.alpha3Code]"
+		>
 		</app-coutry-card>
 	</div>
 </div>

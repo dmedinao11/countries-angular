@@ -1,1 +1,75 @@
-<p>country-detail works!</p>
+<div class="wrapper" appTheme>
+	<div class="back-container">
+		<a class="back">
+			<i class="fas fa-arrow-left"></i>
+			Back
+		</a>
+	</div>
+
+	<div class="country" *ngIf="country; else loading">
+		<img [src]="country.flag" />
+		<div class="info-detail">
+			<h4>{{ country.name }}</h4>
+
+			<div class="info">
+				<div>
+					<h6>
+						Native Name: <small>{{ country.nativeName }}</small>
+					</h6>
+					<h6>
+						Population:
+						<small>{{ country.population | currency: undefined:"":"1.0" }}</small>
+					</h6>
+
+					<h6>
+						Region: <small>{{ country.region }}</small>
+					</h6>
+
+					<h6>
+						Sub Region: <small>{{ country.subregion }}</small>
+					</h6>
+					<h6>
+						Capital: <small>{{ country.capital }}</small>
+					</h6>
+				</div>
+
+				<div>
+					<h6>
+						Top Level Domain: <small>{{ country.topLevelDomain }}</small>
+					</h6>
+
+					<h6>
+						Currencies:
+						<small *ngFor="let currency of country.currencies">
+							{{ currency.name }}
+						</small>
+					</h6>
+					<h6>
+						Languages:
+						<small *ngFor="let language of country.languages">
+							{{ language.name }}
+						</small>
+					</h6>
+				</div>
+			</div>
+
+			<div class="borders-content">
+				<h6>Borders:</h6>
+				<div class="borders">
+					<button
+						*ngFor="let border of country.bordersDetail"
+						[routerLink]="['/country', border.alpha3Code]"
+					>
+						{{ border.name }}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ng-template #loading>
+	<div class="spinner-container">
+		<i class="fas fa-spinner fa-pulse"></i>
+	</div>
+</ng-template>

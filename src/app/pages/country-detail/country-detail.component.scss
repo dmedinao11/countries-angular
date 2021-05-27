@@ -1,0 +1,154 @@
+@use '../../../variables';
+
+.wrapper {
+	margin: 5rem 0;
+}
+
+.back-container {
+	width: 100%;
+
+	.back {
+		box-shadow: variables.$boxShadow;
+		background: variables.$white;
+		color: variables.$darkGray;
+
+		padding: 10px 40px;
+		font-size: 1rem;
+		border-radius: 5px;
+		outline: none;
+		border: none;
+		text-transform: none;
+		text-decoration: none;
+
+		.dark & {
+			background: variables.$darkBlue;
+			color: variables.$white;
+		}
+	}
+
+	i {
+		font-size: 1rem;
+	}
+}
+
+.country {
+	display: flex;
+	margin-top: 5rem;
+	justify-content: space-between;
+	gap: 5rem;
+
+	.dark & * {
+		color: variables.$white;
+	}
+
+	img {
+		width: 40%;
+		height: fit-content;
+	}
+
+	.info-detail {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		width: 50%;
+
+		h4 {
+			font-size: 2rem;
+		}
+
+		h6 {
+			font-weight: 600;
+			font-size: 1rem;
+			margin-bottom: 0.5rem;
+			small {
+				font-weight: 100;
+				&::after {
+					content: ", ";
+				}
+
+				&:last-of-type {
+					&::after {
+						content: "";
+					}
+				}
+			}
+		}
+
+		.info {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.borders-content {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			margin-top: 0.3rem;
+
+			.borders {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-left: 1rem;
+
+				button {
+					box-shadow: variables.$boxShadow;
+					background: variables.$white;
+
+					cursor: pointer;
+					padding: 0.3rem 1rem;
+					font-size: 0.7rem;
+					border-radius: 3px;
+					outline: none;
+					border: none;
+					transition: all 0.2s;
+
+					&:hover {
+						transform: translateY(-5px);
+					}
+
+					.dark & {
+						background: variables.$darkBlue;
+						color: variables.$white;
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 790px) {
+		flex-direction: column;
+
+		img {
+			width: 100%;
+		}
+
+		.info-detail {
+			width: 100%;
+			margin-top: 1.5rem;
+
+			h4 {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 460px) {
+		.info-detail {
+			.info {
+				grid-template-columns: 1fr;
+			}
+
+			.borders-content {
+				grid-template-columns: 1fr;
+				margin-top: 1rem;
+
+				.borders {
+					margin-top: 0.3rem;
+					button {
+						margin: 10px 10px 0px 0px;
+					}
+				}
+			}
+		}
+	}
+}
