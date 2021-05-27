@@ -1,27 +1,77 @@
-# CountriesAngular
+# Where in the world?, buscador de países
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+_Reto 'REST Countries API with color theme switcher' propuesto en
+[Frontendmentor.io](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)_
 
-## Development server
+_Mira [aquí](https://dmedinao11.github.io/countries-angular/countries-angular) la aplicación final._
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Previsualización 👀
 
-## Code scaffolding
+### Escritorio 🖥
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Desktop vista](https://raw.githubusercontent.com/dmedinao11/countries-vanilla/master/preview/desktop1.png)
 
-## Build
+![Desktop vista](https://raw.githubusercontent.com/dmedinao11/countries-vanilla/master/preview/desktop2.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Móvil 📱
 
-## Running unit tests
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dmedinao11/countries-vanilla/master/preview/mobile1.png" alt="Mobile vista"/>
+</p>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dmedinao11/countries-vanilla/master/preview/mobile2.png" alt="Mobile vista"/>
+</p>
 
-## Running end-to-end tests
+## Características ⭐
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Listar y ver detalles de todos los países
+- Llamadas a una REST - API
+- Cambio de tema entre oscuro y claro en la paleta de colores
+- Aplicación web de una sola página (SPA)
+- Uso de [Angular Animations](https://angular.io/api/animations)
 
-## Further help
+## Comenzando 🚀
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu
+máquina local para propósitos de desarrollo y pruebas._
+
+### Instalación 🔧
+
+_Paso a paso para ejecutar el proyecto desde tu computadora_
+
+_Clona el repositorio_
+
+```
+git clone https://github.com/dmedinao11/countries-angular
+```
+
+_Abre la carpeta e instala las dependencias_
+
+```
+cd countries-angular
+npm i
+```
+
+_Ejecuta el servidor de desarrollo_
+
+```
+npm start
+```
+
+_Abre en tu navegador http://localhost:4200/ y listo!_
+
+## Construido con 🛠️
+
+- [Angular](https://angular.io/) - Framework web utilizado
+- [REST COUNTRIES](https://restcountries.eu/) - API gratuita para obtener información
+  sobre los países
+- [SASS](https://sass-lang.com/) - Pre-procesador de css
+
+## Autor ✒️
+
+- **Daniel Medina** - _Desarrollo_ - [dmedinao11](https://github.com/dmedinao11)
+
+---
+
+⌨️ con ❤️ por [dmedinao11](https://github.com/dmedinao11) 😊
