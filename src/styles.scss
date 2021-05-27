@@ -8,7 +8,6 @@
 	box-sizing: border-box;
 	font-family: "Nunito Sans", sans-serif;
 	transition: color;
-	transition: background 0.2s;
 }
 
 body {
@@ -23,5 +22,7 @@ body {
 .wrapper {
 	padding: variables.$globalPadding;
 
-	//TODO: media queries
+	@media only screen and (max-width: 835px) {
+		padding: variables.$tabletPadding;
+	}
 }

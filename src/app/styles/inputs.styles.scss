@@ -4,6 +4,10 @@
 	display: flex;
 	justify-content: space-between;
 	margin-top: 2rem;
+
+	@media only screen and (max-width: 750px) {
+		flex-direction: column;
+	}
 }
 
 .field-container {
@@ -30,6 +34,14 @@
 	&.field-container--select {
 		cursor: pointer;
 		width: 200px;
+
+		@media only screen and (max-width: 750px) {
+			margin-top: 2rem;
+		}
+	}
+
+	@media only screen and (max-width: 750px) {
+		width: 100%;
 	}
 
 	i {

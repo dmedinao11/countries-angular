@@ -1,7 +1,10 @@
 @use '../../../variables';
 
 .wrapper {
-	margin: 5rem 0;
+	margin-top: 5rem;
+	@media only screen and (max-width: 750px) {
+		margin-bottom: 3rem;
+	}
 }
 
 .back-container {
@@ -19,6 +22,7 @@
 		border: none;
 		text-transform: none;
 		text-decoration: none;
+		cursor: pointer;
 
 		.dark & {
 			background: variables.$darkBlue;
@@ -89,6 +93,7 @@
 				flex-wrap: wrap;
 				gap: 0.5rem;
 				margin-left: 1rem;
+				margin-bottom: 1rem;
 
 				button {
 					box-shadow: variables.$boxShadow;

@@ -38,7 +38,6 @@ export class CountryService {
 	}
 
 	getByCode(code: string) {
-		//TODO: Manejar error de no encontrado
 		return this.httpClient
 			.get<ICountryDetail>(
 				`${API_ROUTES.byCode}/${code}${API_REQUEST_FIELDS}${API_REQUEST_FIELDS_DETAIL}`
@@ -47,7 +46,8 @@ export class CountryService {
 				map(async (resp) => {
 					resp.bordersDetail = await this.defineCountriesBorderDetails(resp.borders);
 					return resp;
-				})
+				}),
+				catchError(async () => null)
 			);
 	}
 

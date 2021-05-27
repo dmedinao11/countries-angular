@@ -1,6 +1,6 @@
 <div class="wrapper" appTheme>
 	<div class="back-container">
-		<a class="back">
+		<a class="back" (click)="location.back()">
 			<i class="fas fa-arrow-left"></i>
 			Back
 		</a>
@@ -55,7 +55,7 @@
 
 			<div class="borders-content">
 				<h6>Borders:</h6>
-				<div class="borders">
+				<div class="borders" *ngIf="country.borders.length > 0; else noBorders">
 					<button
 						*ngFor="let border of country.bordersDetail"
 						[routerLink]="['/country', border.alpha3Code]"
@@ -69,7 +69,13 @@
 </div>
 
 <ng-template #loading>
-	<div class="spinner-container">
+	<div class="spinner-container" *ngIf="hasData">
 		<i class="fas fa-spinner fa-pulse"></i>
 	</div>
+
+	<app-error404 *ngIf="!hasData"></app-error404>
+</ng-template>
+
+<ng-template #noBorders>
+	<span>&nbsp;without borders</span>
 </ng-template>

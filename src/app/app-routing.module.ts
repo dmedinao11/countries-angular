@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { Error404Component } from './components/error404/error404.component';
 import { CountriesListComponent } from './pages/countries-list/countries-list.component';
 import { CountryDetailComponent } from './pages/country-detail/country-detail.component';
-
 const routes: Routes = [
 	{ path: 'countries', component: CountriesListComponent },
 	{ path: 'country/:code', component: CountryDetailComponent },
@@ -12,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
+	imports: [RouterModule.forRoot(routes, { useHash: true })],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {}
