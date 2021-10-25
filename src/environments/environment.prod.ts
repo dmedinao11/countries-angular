@@ -1,4 +1,4 @@
-const API_MAIN_ROUTE = 'https://restcountries.eu/rest/v2';
+const API_MAIN_ROUTE = 'https://restcountries.com/v2';
 const API_REQUEST_FIELDS =
 	'?fields=name;population;region;capital;flag;alpha3Code';
 export const environment = {
