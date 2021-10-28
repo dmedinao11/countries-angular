@@ -60,7 +60,7 @@ export class CountryService {
 
 	private getNameByCode(code: string): Promise<IBorder> {
 		return this.httpClient
-			.get<IBorder>(`${API_ROUTES.byCode}/${code}?fields=name;alpha3Code`)
+			.get<IBorder>(`${API_ROUTES.byCode}/${code}?fields=name,alpha3Code`)
 			.toPromise();
 	}
 }
